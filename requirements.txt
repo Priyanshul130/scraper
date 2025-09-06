@@ -1,0 +1,3 @@
+python-csv
+requests 
+beautifulsoup4
