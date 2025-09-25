@@ -1,10 +1,11 @@
 import requests
 from bs4 import BeautifulSoup
-import csv
+import  csv as c
 
 def go(query):
     url = "https://html.duckduckgo.com/html/"
     params = {"q": query}
+
 
     response = requests.get(url, params=params, headers={
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116 Safari/537.36"
@@ -35,7 +36,7 @@ def bing(query):
 def csv(query, results):
     filename = f"{query.replace(' ', '_')}_results.csv"
     with open(filename, "w", newline="", encoding="utf-8") as f:
-        writer = csv.writer(f)
+        writer = c.writer(f)
         writer.writerow(["Query", "Link"])
         for r in results:
             writer.writerow([query, r])
